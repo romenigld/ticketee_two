@@ -18,6 +18,7 @@
               %>
            </li>
        <% end %>
+
     </ul>
 
 </header>
@@ -26,9 +27,16 @@
 
 <header>
   <ul class="actions">
-    <li>
-      <%= link_to "New Ticket", new_project_ticket_path(@project), class: "new" %>
-    </li>
+<!-- SPECIAL SYNTAX? WHY? Why use Ticket.new(project: @project) here instead of @project.tickets.new?
+If you were to use the latter, Rails would add the ticket you built into the list of tickets you get
+when you call @project .tickets. Further down the page, you iterate over @project.tickets and display
+links to each of them. You don’t want the new ticket you’ve just built to appear in that list! -->
+    <%  if policy(Ticket.new(project: @project)).create? %>
+        <li>
+          <%= link_to "New Ticket", new_project_ticket_path(@project), class: "new" %>
+        </li>
+    <% end %>
+
   </ul>
 </header>
 
