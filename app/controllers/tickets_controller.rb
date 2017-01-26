@@ -4,7 +4,7 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = @project.tickets.build
-    
+
     authorize @ticket, :create?
   end
 
@@ -44,10 +44,11 @@ class TicketsController < ApplicationController
   end
 
   def destroy
-      @ticket.destroy
-      flash[:notice] = "Ticket has been deleted."
+    authorize @ticket, :destroy?
 
-      redirect_to @project
+    @ticket.destroy
+    flash[:notice] = "Ticket has been deleted."
+    redirect_to @project
   end
 
 
