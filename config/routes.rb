@@ -10,7 +10,6 @@ Rails.application.routes.draw do
         patch :archive
       end
     end
-    
   end
 
   devise_for :users
@@ -20,4 +19,6 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :show, :edit, :update] do
     resources :tickets
   end
+
+  resources :attachments, only: [:show]
 end
