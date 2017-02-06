@@ -20,5 +20,11 @@ Rails.application.routes.draw do
     resources :tickets
   end
 
+  # a separate non-nested resource for your tickets, and then a nested resource under that for your comments
+  # only care about the ticket, so you can use ticket_comments_path instead.
+  resources :tickets, only: [] do
+    resources :comments, only: [:create]
+  end
+
   resources :attachments, only: [:show, :new]
 end
