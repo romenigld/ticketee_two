@@ -21,6 +21,16 @@
           <%= time_ago_in_words(@ticket.created_at) %> ago
         </td>
       </tr>
+      <% if @ticket.state.present? %>
+        <tr>
+          <th>
+            State:
+          </th>
+          <td>
+            <%= render @ticket.state %>
+          </td>
+        </tr>
+      <% end %>
     </table>
     <h2><%= @ticket.name %></h2>
 
