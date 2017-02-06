@@ -45,6 +45,7 @@ links to each of them. You don’t want the new ticket you’ve just built to ap
       <li>
         #<%= ticket.id %> -
         <%= link_to ticket.name, [@project, ticket] %>
+        <%= render ticket.state if ticket.state %>
       </li>
     <% end %>
 </ul>
