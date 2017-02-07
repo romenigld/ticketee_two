@@ -1,0 +1,7 @@
+<%= simple_form_for [:admin, state] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :color %>
+<!-- Because the state variable rendered in the form is a new instance of the State model,
+the submit method will display a Submit button with the text “Create State.” -->
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
