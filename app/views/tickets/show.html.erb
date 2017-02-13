@@ -37,10 +37,10 @@
               Tags:
             </th>
             <td>
-              <%= render @ticket.tags %>
+              <%= render @ticket.tags, ticket: @ticket %>
             </td>
           </tr>
-      <% end %>  
+      <% end %>
     </table>
     <h2><%= @ticket.name %></h2>
 
