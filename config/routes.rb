@@ -24,7 +24,11 @@ end
   root "projects#index"
 
   resources :projects, only: [:index, :show, :edit, :update] do
-    resources :tickets
+    resources :tickets do
+      collection do
+        get :search
+      end
+    end
   end
 
   # a separate non-nested resource for your tickets, and then a nested resource under that for your comments
