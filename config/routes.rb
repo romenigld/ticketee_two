@@ -28,6 +28,10 @@ end
       collection do
         get :search
       end
+
+      member do
+        post :watch
+      end
     end
   end
 
