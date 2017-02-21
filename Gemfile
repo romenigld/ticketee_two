@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.2.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -65,5 +65,5 @@ gem "searcher", git: "https://github.com/radar/searcher.git"
 gem "fog", "~> 1.29.0"
 gem "pg",      group:  :production
 gem "rails_12factor", group: :production
-
+gem "puma", group: :production
 gem 'net-ssh'
