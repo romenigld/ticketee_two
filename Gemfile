@@ -65,3 +65,5 @@ gem "searcher", github: "radar/searcher"
 gem "fog", "~> 1.29.0"
 gem "pg",      group:  :production
 gem "rails_12factor", group: :production
+
+gem 'net-ssh'
