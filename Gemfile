@@ -67,3 +67,4 @@ gem "pg",      group:  :production
 gem "rails_12factor", group: :production
 gem "puma", group: :production
 gem 'net-ssh'
+gem "active_model_serializers", "~> 0.9.3"
