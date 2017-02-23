@@ -16,8 +16,16 @@ namespace :admin do
         get :make_default
       end
     end
-
 end
+
+  namespace :api do
+    # resources :projects, only: [] do
+    #   resources :tickets
+    # end
+    scope path: "/projects/:project_id", as: "project" do
+      resources :tickets
+    end
+  end
 
   devise_for :users
 
