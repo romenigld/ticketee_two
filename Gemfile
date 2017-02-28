@@ -68,3 +68,4 @@ gem "rails_12factor", group: :production
 gem "puma", group: :production
 gem 'net-ssh'
 gem "active_model_serializers", "~> 0.9.3"
+gem 'thor', '0.19.1', '!=0.19.2', '!=0.19.3', '!=0.19.4'
