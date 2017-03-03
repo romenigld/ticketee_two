@@ -69,3 +69,4 @@ gem "puma", group: :production
 gem 'net-ssh'
 gem "active_model_serializers", "~> 0.9.3"
 gem 'thor', '~> 0.19.4'
+gem "sinatra"
