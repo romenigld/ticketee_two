@@ -25,6 +25,8 @@ class Admin::StatesController < Admin::ApplicationController
     flash[:notice] = "'#{@state.name}' is now the default state."
     redirect_to admin_states_path
   end
+
+  
   private
 
   def state_params
