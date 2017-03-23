@@ -20,7 +20,7 @@ RSpec.describe CommentPolicy do
     end
 
     context "for editors of the project" do
-      before { assign_role!(user, :manager, project) }
+      before { assign_role!(user, :editor, project) }
       it {should permit_action :create }
     end
 
