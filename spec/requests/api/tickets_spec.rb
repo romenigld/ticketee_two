@@ -1,11 +1,11 @@
 require "rails_helper"
 
 RSpec.describe "Tickets API" do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:project) { FactoryGirl.create(:project) }
-  let(:state) { FactoryGirl.create(:state, name: "Open") }
+  let(:user) { create(:user) }
+  let(:project) { create(:project) }
+  let(:state) { create(:state, name: "Open") }
   let(:ticket) do
-    FactoryGirl.create(:ticket, project: project, state: state)
+    create(:ticket, project: project, state: state)
   end
 
   before do

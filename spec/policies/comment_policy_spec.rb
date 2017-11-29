@@ -4,10 +4,10 @@ RSpec.describe CommentPolicy do
   context "permissions" do
     subject { CommentPolicy.new(user, comment) }
 
-    let(:user) { FactoryGirl.create(:user) }
-    let(:project) { FactoryGirl.create(:project) }
-    let(:ticket) { FactoryGirl.create(:ticket, project: project) }
-    let(:comment) { FactoryGirl.create(:comment, ticket: ticket) }
+    let(:user) { create(:user) }
+    let(:project) { create(:project) }
+    let(:ticket) { create(:ticket, project: project) }
+    let(:comment) { create(:comment, ticket: ticket) }
 
     context "for anonymous users" do
       let(:user) { nil }
@@ -31,13 +31,13 @@ RSpec.describe CommentPolicy do
 
     context "for managers of other projects" do
       before do
-        assign_role!(user, :manager, FactoryGirl.create(:project))
+        assign_role!(user, :manager, create(:project))
       end
       it { should_not permit_action :create }
     end
 
     context "for administrators" do
-      let(:user) { FactoryGirl.create :user, :admin }
+      let(:user) { create :user, :admin }
       it { should permit_action :create }
     end
   end

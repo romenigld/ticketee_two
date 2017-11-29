@@ -1,10 +1,10 @@
 require "rails_helper"
 
 RSpec.feature "Users can watch and unwatch tickets" do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:project) { FactoryGirl.create(:project) }
+  let(:user) { create(:user) }
+  let(:project) { create(:project) }
   let(:ticket) do
-    FactoryGirl.create(:ticket, project: project, author: user)
+    create(:ticket, project: project, author: user)
   end
 
   before do

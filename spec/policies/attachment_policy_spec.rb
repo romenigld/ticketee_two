@@ -4,10 +4,10 @@ RSpec.describe AttachmentPolicy do
   context "permissions" do
     subject { AttachmentPolicy.new(user, attachment) }
 
-    let(:user) { FactoryGirl.create(:user) }
-    let(:project) { FactoryGirl.create(:project) }
-    let(:ticket) { FactoryGirl.create(:ticket, project: project) }
-    let(:attachment) { FactoryGirl.create(:attachment, ticket: ticket) }
+    let(:user) { create(:user) }
+    let(:project) { create(:project) }
+    let(:ticket) { create(:ticket, project: project) }
+    let(:attachment) { create(:attachment, ticket: ticket) }
 
     context "for anonymous users" do
       let(:user) { nil }
@@ -31,13 +31,13 @@ RSpec.describe AttachmentPolicy do
 
     context "for managers of other projects" do
       before do
-        assign_role!(user, :manager, FactoryGirl.create(:project))
+        assign_role!(user, :manager, create(:project))
       end
       it { should_not permit_action :show }
     end
 
     context "for administrators" do
-      let(:user) { FactoryGirl.create :user, :admin }
+      let(:user) { create :user, :admin }
       it { should permit_action :show }
     end
   end

@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.feature "Users can comment on tickets" do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:project) { FactoryGirl.create(:project) }
-  let(:ticket) { FactoryGirl.create(:ticket, project: project, author: user) }
+  let(:user) { create(:user) }
+  let(:project) { create(:project) }
+  let(:ticket) { create(:ticket, project: project, author: user) }
 
   before do
     login_as(user)
@@ -29,7 +29,7 @@ RSpec.feature "Users can comment on tickets" do
   end
 
   scenario "when changing a ticket's state" do
-    FactoryGirl.create(:state, name: "Open")
+    create(:state, name: "Open")
 
     visit project_ticket_path(project, ticket)
     fill_in "Text", with: "This is a real issue"

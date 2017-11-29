@@ -4,9 +4,9 @@ RSpec.describe TicketPolicy do
   context "permissions" do
       subject { TicketPolicy.new(user, ticket) }
 
-      let(:user) { FactoryGirl.create(:user) }
-      let(:project) { FactoryGirl.create(:project) }
-      let(:ticket) { FactoryGirl.create(:ticket, project: project) }
+      let(:user) { create(:user) }
+      let(:project) { create(:project) }
+      let(:ticket) { create(:ticket, project: project) }
 
       context "for anonymous users" do
         let(:user) { nil }
@@ -60,7 +60,7 @@ RSpec.describe TicketPolicy do
 
       context "for managers of other projects" do
         before do
-          assign_role!(user, :manager, FactoryGirl.create(:project))
+          assign_role!(user, :manager, create(:project))
         end
 
         it { should_not permit_action :show }
@@ -72,7 +72,7 @@ RSpec.describe TicketPolicy do
       end
 
       context "for administrators" do
-        let(:user) { FactoryGirl.create :user, :admin }
+        let(:user) { create :user, :admin }
 
         it { should permit_action :show }
         it { should permit_action :create }

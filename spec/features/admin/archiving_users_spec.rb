@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.feature "An admin can archive users" do
-  let(:admin_user) { FactoryGirl.create(:user, :admin) }
-  let(:user) { FactoryGirl.create(:user) }
+  let(:admin_user) { create(:user, :admin) }
+  let(:user) { create(:user) }
 
   before do
     login_as(admin_user)

@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.feature "Users can view projects" do
-  let(:user) { FactoryGirl.create(:user) }
-  let(:project) { FactoryGirl.create(:project, name: "Sublime Text 3") }
+  let(:user) { create(:user) }
+  let(:project) { create(:project, name: "Sublime Text 3") }
 
   before do
     login_as(user)
@@ -17,7 +17,7 @@ RSpec.feature "Users can view projects" do
   end
 
   scenario "unless they do not have permission" do
-    FactoryGirl.create(:project, name: "Hidden")
+    create(:project, name: "Hidden")
     visit "/"
     expect(page).not_to have_content "Hidden"
   end

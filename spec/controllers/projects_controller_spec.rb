@@ -13,7 +13,7 @@ RSpec.describe ProjectsController, type: :controller do
   it "handles permission errors by redirecting to a safe place" do
     allow(controller).to receive(:current_user)
 
-    project = FactoryGirl.create(:project)
+    project = create(:project)
     get :show, id: project
 
     expect(response).to redirect_to(root_path)

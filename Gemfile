@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby "2.2.1"
+ruby "2.4.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.10'
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", group: [:development, :test]
 
@@ -48,7 +48,7 @@ end
 
 group :test do
   gem "capybara", "~> 2.4"
-  gem "factory_girl_rails", "~> 4.5"
+  gem "factory_bot_rails"
   gem "selenium-webdriver", "~> 2.45"
   gem "database_cleaner", "~> 1.4"
   gem "email_spec", "~> 1.6.0"
@@ -56,13 +56,13 @@ end
 
 gem "bootstrap-sass", "~> 3.3"
 gem "font-awesome-rails", "~> 4.3"
-gem "simple_form", "~> 3.1.0"
+gem "simple_form"
 gem "devise", "~> 3.4.1"
 gem "pundit", "~> 0.3.0"
 gem "awesome_print"
 gem "carrierwave", "~> 0.10.0"
 gem "searcher", git: "https://github.com/radar/searcher.git"
-gem "fog", "~> 1.29.0"
+gem "fog"
 gem "pg",      group:  :production
 gem "rails_12factor", group: :production
 gem "puma", group: :production
@@ -70,3 +70,4 @@ gem 'net-ssh'
 gem "active_model_serializers", "~> 0.9.3"
 gem 'thor', '~> 0.19.4'
 gem "sinatra"
+gem 'xmlrpc'

@@ -1,11 +1,11 @@
 require "rails_helper"
 
 RSpec.feature "Users can only see the appropriate links" do
-  let(:project) { FactoryGirl.create(:project) }
-  let(:user)  { FactoryGirl.create(:user) }
-  let(:admin) { FactoryGirl.create(:user, :admin) }
+  let(:project) { create(:project) }
+  let(:user)  { create(:user) }
+  let(:admin) { create(:user, :admin) }
   let(:ticket) do
-    FactoryGirl.create(:ticket, project: project, author: user)
+    create(:ticket, project: project, author: user)
   end
 
   context "anonymous users" do
