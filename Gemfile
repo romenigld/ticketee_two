@@ -49,9 +49,10 @@ end
 group :test do
   gem "capybara", "~> 2.4"
   gem "factory_bot_rails"
-  gem "selenium-webdriver", "~> 2.45"
   gem "database_cleaner", "~> 1.4"
   gem "email_spec", "~> 1.6.0"
+  gem 'poltergeist'
+  gem 'launchy'
 end
 
 gem "bootstrap-sass", "~> 3.3"
